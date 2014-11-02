@@ -1,0 +1,5 @@
+name: hello_block
+type: module
+description: Hello Block
+core: 8.x
+package: Custom Module

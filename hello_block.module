@@ -1,0 +1,79 @@
+<?php
+
+/**
+ * @file
+ * Contains hello_block.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Block\BlockPluginInterface;
+
+/**
+ * Implements hook_help().
+ */
+
+function hello_block_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the hello_block module.
+    case 'help.page.hello_block':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Hello Block') . '</p>';
+      return $output;
+    break;
+  }
+}
+
+
+
+
+function hello_block_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
+  if ($build['#block']) {
+    var_dump($build['#block']->id());
+    var_dump($build['#block']->bundle());
+  }
+  if ($build['#block']->id == 'slider1') {
+    // var_dump($block);
+    $content = $build['#block']->getPlugin()->build();
+    // var_dump($content);
+    $build['content'] = $content;
+  }
+
+
+}
+
+
+
+/**
+ * Prepares variables for block templates.
+ *
+ * Default template: block.html.twig.
+ *
+ * Prepares the values passed to the theme_block function to be passed
+ * into a pluggable template engine. Uses block properties to generate a
+ * series of template file suggestions. If none are found, the default
+ * block.html.twig is used.
+ *
+ * Most themes use their own copy of block.html.twig. The default is located
+ * inside "core/modules/block/templates/block.html.twig". Look in there for the
+ * full list of available variables.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the properties of the element.
+ *     Properties used: #block, #configuration, #children, #plugin_id.
+ */
+function hello_block_preprocess_block(&$variables) {
+  $variables['configuration'] = $variables['elements']['#configuration'];
+  $variables['plugin_id'] = $variables['elements']['#plugin_id'];
+  $variables['base_plugin_id'] = $variables['elements']['#base_plugin_id'];
+  // $variables['label'] = !empty($variables['configuration']['label_display']) ? $variables['configuration']['label'] : '';
+  // var_dump($variables['plugin_id']);
+  // var_dump($variables['base_plugin_id']);
+
+  // $variables['content'] = array(
+  //   '#markup' => 'ALA CONTENT',
+  // );
+
+}
