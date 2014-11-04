@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains hello_menu.module
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+
+function hello_menu_help($route_name, RouteMatchInterface $route_match)
+{
+  switch ($route_name) {
+    // Main module help for the hello_menu module.
+    case 'help.page.hello_menu':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Hello Menu') . '</p>';
+      return $output;
+    break;
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+
+function hello_menu_theme()
+{
+  $theme = [];
+
+  return $theme;
+}

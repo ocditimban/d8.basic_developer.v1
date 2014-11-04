@@ -1,0 +1,9 @@
+hello_menu.default_controller_hello_link:
+  title: 'Hello Link 1'
+  route_name: hello_menu.default_controller_hello_link
+  menu_name: footer
+
+hello_menu.default_controller_hello_link_2:
+  title: 'Hello Link 2'
+  route_name: hello_menu.default_controller_hello_link_2
+  menu_name: footer

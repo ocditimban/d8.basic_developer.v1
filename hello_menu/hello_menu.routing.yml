@@ -1,0 +1,16 @@
+hello_menu.default_controller_hello_link:
+  path: 'hello_menu/link'
+  defaults:
+    _content: '\Drupal\hello_menu\Controller\DefaultController::hello'
+    _title: 'hello_menu Title'
+  requirements:
+    _permission: 'access content'
+
+hello_menu.default_controller_hello_link_2:
+  path: 'hello_menu/link2'
+  defaults:
+    _content: '\Drupal\hello_menu\Controller\DefaultController::hello'
+    _title: 'hello_menu Title'
+  requirements:
+    _permission: 'access content'
+

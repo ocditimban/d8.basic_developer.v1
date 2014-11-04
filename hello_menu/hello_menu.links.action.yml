@@ -1,0 +1,10 @@
+hello_menu.default_controller_hello_link:
+  route_name: hello_menu.default_controller_hello_link
+  title: 'Add hello link'
+  appears_on:
+    - entity.menu.edit_form
+hello_menu.default_controller_hello_link_2:
+  route_name: hello_menu.default_controller_hello_link_2
+  title: 'Add hello menu'
+  appears_on:
+    - menu_ui.overview_page

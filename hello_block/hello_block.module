@@ -29,17 +29,12 @@ function hello_block_help($route_name, RouteMatchInterface $route_match)
 
 
 function hello_block_block_view_alter(array &$build, \Drupal\Core\Block\BlockPluginInterface $block) {
-  if ($build['#block']) {
-    var_dump($build['#block']->id());
-    var_dump($build['#block']->bundle());
-  }
   if ($build['#block']->id == 'slider1') {
     // var_dump($block);
     $content = $build['#block']->getPlugin()->build();
     // var_dump($content);
     $build['content'] = $content;
   }
-
 
 }
 

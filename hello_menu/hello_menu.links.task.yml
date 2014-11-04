@@ -1,0 +1,10 @@
+hello_menu.default_controller_hello_link:
+  route_name: hello_menu.default_controller_hello_link
+  title: 'Hello Menu Default'
+  base_route: hello_menu.default_controller_hello_link
+
+hello_menu.default_controller_hello_link_2:
+  route_name: hello_menu.default_controller_hello_link_2
+  title: 'Hello Menu Sub'
+  base_route: hello_menu.default_controller_hello_link
+  weight: 100
