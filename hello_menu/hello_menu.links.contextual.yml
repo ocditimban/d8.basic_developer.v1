@@ -1,0 +1,4 @@
+block_delete:
+  title: 'Configure delete'
+  route_name: 'entity.block.delete_form'
+  group: 'block'
