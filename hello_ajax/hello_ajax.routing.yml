@@ -1,0 +1,8 @@
+hello_ajax.hello_ajax_form:
+  path: '/hello_ajax/form'
+  defaults:
+    _form: '\Drupal\hello_ajax\Form\hello_ajax'
+    _title: 'hello_ajax hello_ajax Form'
+  requirements:
+    _permission: 'access administration pages'
+
