@@ -7,6 +7,7 @@
 
 namespace Drupal\hello_ajax\Form;
 
+use Drupal\Core\Url;
 use Drupal\Core\Form\ConfigFormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Config\ConfigFactoryInterface;
@@ -79,6 +80,17 @@ class hello_ajax extends ConfigFormBase
       '#prefix' => '<div id="body-replace-id">',
       '#suffix' => '</div>',
     ];
+
+    // Dialog behavior applied to a #type => 'link'.
+    $form['link'] = array(
+      '#type' => 'link',
+      '#title' => 'Link 1 (modal)',
+      '#url' => Url::fromRoute('hello_ajax.hello_ajax_form'),
+      '#attributes' => array(
+        'class' => array('use-ajax'),
+        'data-accepts' => 'application/vnd.drupal-dialog',
+      ),
+    );
 
     return parent::buildForm($form, $form_state);
   }

@@ -6,3 +6,16 @@ hello_ajax.hello_ajax_form:
   requirements:
     _permission: 'access administration pages'
 
+hello_ajax.link:
+  path: '/hello_ajax/page'
+  defaults:
+    _content: '\Drupal\hello_ajax\Page\HelloAjaxPage::Render'
+  requirements:
+    _permission: 'access administration pages'
+
+hello_ajax.link.process:
+  path: '/hello_ajax/process'
+  defaults:
+    _content: '\Drupal\hello_ajax\Page\HelloAjaxProcess::Render'
+  requirements:
+    _permission: 'access administration pages'
